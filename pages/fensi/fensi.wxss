@@ -1,0 +1,38 @@
+.section__ctn{
+  text-align:center;
+  padding:30px;
+  background:#2196F3;
+
+}
+image{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  margin:0 auto
+}
+.lst{
+  height:35px;
+  width:100%;
+  text-align: left;
+  border-bottom: 1px solid #F1F1F1;
+  margin:10px;
+
+
+}
+.pic{
+  width:30px;
+  height:30px;
+  border-radius:0;
+  float:left;
+  margin-right:20px;
+
+}
+.pics{
+  width:50px;
+  height:50px;
+}
+.niu{
+  width:22%;
+  float:left;
+  margin:3px;
+}

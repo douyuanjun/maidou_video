@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/fabu/fabu",
+    "pages/follow/follow",
+    "pages/action/action",
+    "pages/jifen/jifen",
+    "pages/fensi/fensi"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "麦兜视频",
+    "navigationBarTextStyle":"black"
+    
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/img/index.png",
+        "selectedIconPath": "pages/img/index.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/fabu/fabu",
+        "iconPath": "pages/img/bf.png",
+        "selectedIconPath": "pages/img/bf.png",
+        "text": "发布"
+      }
+      ,
+      {
+        "pagePath": "pages/follow/follow",
+        "iconPath": "pages/img/gz.png",
+        "selectedIconPath": "pages/img/gz.png",
+        "text": "关注"
+      }
+      ,
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "pages/img/me.png",
+        "selectedIconPath": "pages/img/me.png",
+        "text": "我的"
+      }
+    ]
+  }
+  
+}

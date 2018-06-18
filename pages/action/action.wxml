@@ -1,0 +1,61 @@
+<view wx:for="{{list}}" wx:key>
+      <view class="lis">     
+          
+          <view>
+              <video id="index{{index}}" src="{{item.url}}" wx:if="{{playIndex==index}}"></video>
+            </view>
+
+          <view id="{{index}}" class="cover" style="display: {{playIndex==index?'none':'block'}};" bindtap="videoPlay">
+            <image class="coverImg" src="{{item.image}}" mode="scaleToFill">
+              <view class="playImgs">
+                <view>{{item.name}}</view>
+                <view style="font-size:14px;">播放：{{item.bofang}}</view>
+              </view>
+              <image class="playImg" src="/pages/img/play.png" mode="scaleToFill"></image>
+            </image>
+          </view>                  
+         <view class="video_buttom">
+        <image class="user_logo" src="{{touxiang}}{{item.touxiang}}"></image>
+              <view class="t">{{item.uname}}</view>
+              <view class="ri">{{item.bofang}}播放</view>
+              <view class="ri" bindtap='actionclick' data-videoid="{{item.id}}"><i class="icon iconfont icon-liuyan2"></i>留言{{item.liuyan}}</view>
+              <view class="ri" style="width:18%" bindtap='nihao' data-authorid="{{item.authorid}}" data-is="{{item.is_gz}}" data-i="{{index}}"><i class="icon iconfont icon-tianjia2"></i>{{item.is_gz == 1 ? '已关注':'关注'}}</view>
+              
+              <view class="ris"><button data-name="shareBtn" plain="true" open-type="share"><i class="icon iconfont icon-fenxiang-copy"></i></button></view>
+        </view> 
+      </view> 
+   </view>
+    
+    <view wx:for="{{gg}}">
+      <view>
+                  <image style="width:100%;height:100px;" src="http://183545.com/{{item.show_img}}"></image>
+                   <view style="clear:both"></view>
+      </view>
+    </view>
+
+    <!-- 获取评论 -->
+    <view wx:for="{{comment}}">
+   <view style="padding:10px;background:white;border-top: 1px solid #EDEDED;">
+      <view style="float:left">
+      <image style="width: 40px; height: 40px; background-color: #eeeeee;border-radius:50%" mode="{{item.mode}}" src="{{item.touxiang}}"></image>
+      </view>
+      <view style="float:left;margin-left:5px">
+        <view style="font-size:18px;">{{item.username}}</view>
+        <view style="font-size:14px;">{{item.addtime}}</view>
+      </view>
+      <view style="clear:both;font-size:15px;">{{item.content}}</view> 
+      
+
+   </view>
+   
+   </view>
+   <!-- 评论 -->
+    <view class="section" style="background:white;padding:10px;border:1px solid #EDEDED;">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <textarea name="comment" placeholder="请输入留言内容..." focus="{{focus}}" />
+      <view class="btn-area">
+        <button type="primary" formType="submit">评论</button>
+      </view>
+      </form>
+    </view>
+   

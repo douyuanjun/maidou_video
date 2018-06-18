@@ -1,0 +1,93 @@
+<!--index.wxml-->
+
+ <view>
+
+  
+  <view class="roll">
+    <view class="roll_2">
+      <view class="roll_float">
+        <!-- 推荐 -->
+        <view class="tit" style="color:rgb(255, 152, 0);border-bottom:3px solid rgb(255, 152, 0);font-fanliy:宋体" wx:if="{{tj == 1}}" bindtap='indexfunc'>
+          推荐
+        </view>
+        <view class="tit" style="font-fanliy:宋体" wx:if="{{tj == 2}}" bindtap='onLoad'>
+          推荐
+        </view>
+
+        <block wx:for="{{categroy}}" wx:key="this"> 
+
+        
+
+
+        <!-- 栏目高亮 -->
+        <view class="tit" style="color:rgb(255, 152, 0);border-bottom:3px solid rgb(255, 152, 0);font-fanliy:宋体" wx:if="{{item.url == catid}}" bindtap='detailfunc' data-id="{{item.url}}">
+          {{item.name}}
+        </view>
+        <view class="tit" style="font-fanliy:宋体" wx:else data-id="{{item.url}}"  bindtap='detailfunc'>{{item.name}}</view>
+        
+        </block> 
+       
+      </view>
+    </view>
+  
+  </view>
+
+
+  <view class="uls">
+
+    <view wx:for="{{list}}" wx:key>
+      <view class="lis">     
+          
+          <view>
+              <video id="index{{index}}" src="{{item.url}}" wx:if="{{playIndex==index}}"></video>
+            </view>
+
+          <view id="{{index}}" class="cover" style="display: {{playIndex==index?'none':'block'}};" bindtap="videoPlay">
+            <image class="coverImg" src="{{item.image}}" mode="scaleToFill">
+              <view class="playImgs">
+                <view>{{item.name}}</view>
+                <view style="font-size:14px;">播放：{{item.bofang}}</view>
+              </view>
+              <image class="playImg" src="/pages/img/play.png" mode="scaleToFill"></image>
+            </image>
+          </view>                  
+         <view class="video_buttom">
+        <image class="user_logo" src="{{touxiang}}{{item.touxiang}}"></image>
+              <view class="t">{{item.uname}}</view>
+             
+              <view class="ri" bindtap='actionclick' data-videoid="{{item.id}}"><i class="icon iconfont icon-liuyan2"></i>留言{{item.liuyan}}</view>
+              <view class="ri" bindtap='nihao' data-authorid="{{item.authorid}}" data-is="{{item.is_gz}}" data-i="{{index}}"><i class="icon iconfont icon-tianjia2"></i>{{item.is_gz == 1 ? '已关注':'关注'}}</view>
+              
+              <view class="ris"><button data-name="shareBtn" plain="true" open-type="share"><i class="icon iconfont icon-fenxiang-copy"></i></button></view>
+              
+             
+              
+              
+              
+        </view> 
+              <view  wx:if="{{item.gg}}">
+                  <image style="width:100%;height:100px;" src="{{item.gg}}"></image>
+                   <view style="clear:both"></view>
+              </view>
+      </view> 
+   </view>
+     
+
+
+
+
+
+  </view>
+  <view wx:if="{{loadingHidden}}" style="text-align:center">
+    
+    <view>
+      <image src="/pages/img/loadding.gif" style="width:30px;height:30px;"></image><view style="font-size:12px">潍坊宏源网络技术支持</view>
+    </view>
+  </view>
+  <!-- <loading hidden="{{loadingHidden}}">
+    加载中...
+</loading> -->
+  
+
+
+</view> 

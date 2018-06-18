@@ -1,0 +1,23 @@
+ <view class="section__ctn">
+        <image style="background-color: #eeeeee;" mode="{{item.mode}}" src="{{logininfo.images}}"></image>
+</view>
+ <view class="section__ctn">
+        <view>{{logininfo.name}}</view>
+</view>
+
+<view wx:for="{{list}}">
+
+  <view class="niu">
+      <view style="text-align:center">
+        <image class="pics" src="{{item.touxiang}}"></image>
+        <view style="font-size:15px;">{{item.name}}</view>
+        <view></view>
+        <view></view>
+      </view>
+  </view>
+
+  
+  
+  
+
+</view>

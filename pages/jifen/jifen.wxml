@@ -1,0 +1,20 @@
+ <view class="section__ctn">
+        <image style="background-color: #eeeeee;" mode="{{item.mode}}" src="{{logininfo.images}}"></image>
+</view>
+ <view class="section__ctn">
+        <view>{{logininfo.name}}</view>
+</view>
+<view class="acti">
+  <view>积分规则：</view>
+  <view>一、新注册+发布第一个视频马上有奖励请联系站长。</view>
+  <view>二、一个视频播放量在一定次数(具体次数请联系站长或请查看最新公告)以上奖励1分。</view>
+  <view>三、不按法律规定发布（涉黄、涉恐等）视频或发布广告视频的我们将删除视频，会员将被扣除3个积分。</view>
+  <view>四、每个会员每天上传视频数量上限为10个（有时候会变动，请查看最新公告）。</view>
+  <view>五、具体兑换比例（请查看最新公告），或请联系管理员微信：18822888979</view>
+  <label><checkbox value="checkbox1"/>100元现金</label>
+<label><checkbox value="checkbox2"/>50元现金</label>
+<label><checkbox value="checkbox2"/>20元现金</label>
+</view>
+<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"> 兑换 </button>
+<view style="margin-bottom:20px;"></view>

@@ -1,0 +1,16 @@
+ <view class="section__ctn">
+        <image wx:if="{{!logininfo.images}}" style="background-color: #eeeeee;" mode="{{item.mode}}" src="/pages/img/touxiang.png"></image>
+        <image wx:if="{{logininfo.images}}" style="background-color: #eeeeee;" mode="{{item.mode}}" src="{{logininfo.images}}"></image>
+</view>
+ <view class="section__ctn">
+        <view wx:if="{{!logininfo.images}}">未登录</view>
+        <view wx:if="{{logininfo.images}}">{{logininfo.name}}</view>
+</view>
+<button type="primary" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信授权登录</button>
+<view>{{openid}}</view>
+<view wx:if="{{canIUse == false}}">
+<view class="lst" bindtap='myfensi'><image class="pic" src="/pages/img/fs.png"></image>我的粉丝</view>
+<view class="lst" bindtap='myjifen'><image class="pic" src="/pages/img/jf.png"></image>积分
+<view style="float:right;margin-right:60px;">{{logininfo.jifen}}</view>
+</view>
+</view>

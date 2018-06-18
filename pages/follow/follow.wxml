@@ -1,0 +1,45 @@
+<view wx:for="{{gzuser}}" wx:key>
+  <view class="section__ctn" bindtap='authorlst_click' data-id="{{item.user_name}}">
+          <image class="pic" src="{{url}}{{item.touxiang}}"></image>
+          <view style="font-size:14px;">{{item.name}}</view>
+  </view>
+</view>
+<!-- 作者列表 -->
+
+<view class="uls">
+
+    <view wx:for="{{list}}" wx:key>
+      <view class="lis">     
+          
+          <view>
+              <video id="index{{index}}" src="{{item.url}}" wx:if="{{playIndex==index}}"></video>
+            </view>
+
+          <view id="{{index}}" class="cover" style="display: {{playIndex==index?'none':'block'}};" bindtap="videoPlay">
+            <image class="coverImg" src="{{item.image}}" mode="scaleToFill">
+              <view class="playImgs">
+                <view>{{item.name}}</view>
+                <view style="font-size:14px;">播放：{{item.bofang}}</view>
+              </view>
+              <image class="playImg" src="http://183545.com/m/play.png" mode="scaleToFill"></image>
+            </image>
+          </view>                  
+         <view class="video_buttom">
+        <image class="user_logo" src="{{touxiang}}{{item.touxiang}}"></image>
+              <view class="t">{{item.uname}}</view>
+              <view class="ri">{{item.bofang}}播放</view>
+              <view class="ri"><i class="icon iconfont icon-liuyan2"></i>留言{{item.liuyan}}</view>
+              <view class="ri" bindtap='nihao' data-authorid="{{item.authorid}}" data-is="{{item.is_gz}}" data-i="{{index}}"><i class="icon iconfont icon-tianjia2"></i>{{item.is_gz == 1 ? '已关注':'关注'}}</view>
+        </view> 
+      </view> 
+   </view>
+     
+
+
+
+
+
+  </view>
+
+
+
